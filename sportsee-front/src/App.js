@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Aside from "./components/Aside";
 import Header from "./components/Header";
 import Error from "./pages/Error";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <div className="main-section">
           <Aside />
           <Routes>
+            <Route path="/user/:id" element={<Dashboard />}>
+              {" "}
+            </Route>
             <Route path="*" element={<Error />}></Route>
           </Routes>
         </div>

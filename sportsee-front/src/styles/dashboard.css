@@ -1,0 +1,10 @@
+.charts-main {
+  width: 70%;
+  padding-left: 155px;
+  position: absolute;
+  top: 255px;
+}
+
+.welcome-msg {
+  font-weight: 400;
+}

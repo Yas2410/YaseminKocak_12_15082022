@@ -1,0 +1,23 @@
+.dashboard-main {
+  flex-grow: 1;
+  width: 100%;
+  padding: 155px;
+  padding-top: 60px;
+  display: flex;
+  position: absolute;
+  top: 35px;
+  flex-direction: column;
+}
+
+.welcome-user {
+  margin-bottom: 10px;
+}
+
+.username {
+  color: #ff0000;
+  font-size: 40px;
+}
+
+.welcome-msg {
+  font-size: 18px;
+}
