@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import WelcomeUser from "../components/WelcomeUser";
 import Activity from "../components/Activity";
 import "../styles/dashboard.css";
+import AverageSess from "../components/Average";
+import NutritionalValues from "../components/NutritionalValues";
 
 export default function Dashboard(userId) {
   userId = useParams().id;
@@ -17,6 +19,8 @@ export default function Dashboard(userId) {
           <WelcomeUser />
           <section className="charts-main">
             <Activity />
+            <AverageSess />
+            <NutritionalValues />
           </section>
         </>
       ) : (

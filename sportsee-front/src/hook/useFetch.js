@@ -37,3 +37,6 @@ export function useFetch(userId) {
 useFetch.propTypes = {
   userId: propTypes.number.isRequired,
 };
+
+//API
+//http://localhost:3000/user/+userId/
