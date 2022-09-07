@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Error from "./pages/Error";
 import Dashboard from "./pages/Dashboard";
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Router>
@@ -12,7 +12,7 @@ function App() {
         <div className="main-section">
           <Aside />
           <Routes>
-            <Route path="/user/:id" element={<Dashboard />}>
+            <Route path="/:id" element={<Dashboard mock={props.mock} />}>
               {" "}
             </Route>
             <Route path="*" element={<Error />}></Route>
