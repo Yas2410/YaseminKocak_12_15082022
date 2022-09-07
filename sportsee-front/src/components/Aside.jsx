@@ -1,6 +1,6 @@
 import yoga from "../assets/yoga-icon.svg";
 import swim from "../assets/swim-icon.svg";
-import bicycle from "../assets/bicyle-icon.svg";
+import bicycle from "../assets/bicycle-icon.svg";
 import workout from "../assets/workout-icon.svg";
 import "../styles/aside.css";
 
