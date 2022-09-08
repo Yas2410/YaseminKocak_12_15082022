@@ -20,7 +20,7 @@ export function useGetData(mock, id) {
   } else {
     // DONNEES MOCKEES :
     path = mocked_data + id;
-    pathSyntax = "/";
+    pathSyntax = "-";
   }
   userPath = path;
   activityPath = path + pathSyntax + "activity";
@@ -30,40 +30,40 @@ export function useGetData(mock, id) {
   //J'Ajoute mon USEFETCH à chacun des chemins :
   const {
     data: userData,
-    loading: userDataLoading,
+    loading: userLoading,
     error: userError,
   } = useFetch(userPath);
 
   const {
     data: activityData,
-    loading: activityDataLoading,
+    loading: activityLoading,
     error: activityError,
   } = useFetch(activityPath);
 
   const {
     data: averageData,
-    loading: averageDataLoading,
+    loading: averageLoading,
     error: averageError,
   } = useFetch(averagePath);
 
   const {
     data: perfData,
-    loading: perfDataLoading,
+    loading: perfLoading,
     error: perfError,
   } = useFetch(perfPath);
 
   return {
     userData,
-    userDataLoading,
+    userLoading,
     userError,
     activityData,
-    activityDataLoading,
+    activityLoading,
     activityError,
     averageData,
-    averageDataLoading,
+    averageLoading,
     averageError,
     perfData,
-    perfDataLoading,
+    perfLoading,
     perfError,
   };
 }

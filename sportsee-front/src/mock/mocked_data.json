@@ -16,7 +16,7 @@
       }
     }
   },
-  "1/activity": {
+  "1-activity": {
     "data": {
       "userId": 1,
       "sessions": [
@@ -30,7 +30,7 @@
       ]
     }
   },
-  "1/average-sessions": {
+  "1-average-sessions": {
     "data": {
       "userId": 1,
       "sessions": [
@@ -44,7 +44,7 @@
       ]
     }
   },
-  "1/performance": {
+  "1-performance": {
     "data": {
       "userId": 1,
       "kind": {
@@ -82,7 +82,7 @@
       }
     }
   },
-  "2/activity": {
+  "2-activity": {
     "data": {
       "userId": 2,
       "sessions": [
@@ -96,7 +96,7 @@
       ]
     }
   },
-  "2/average-sessions": {
+  "2-average-sessions": {
     "data": {
       "userId": 2,
       "sessions": [
@@ -110,7 +110,7 @@
       ]
     }
   },
-  "2/performance": {
+  "2-performance": {
     "data": {
       "userId": 2,
       "kind": {
