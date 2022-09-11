@@ -1,3 +1,4 @@
+import React from "react";
 import propTypes from "prop-types";
 import {
   ResponsiveContainer,
@@ -7,16 +8,13 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
-import { useFetch } from "../hook/useFetch";
-import { useParams } from "react-router-dom";
-import AverageSessions from "../class/averageSessionsClass";
 import "../styles/average.css";
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload) {
     return (
-      <div className="averageSess-results">
-        <p>{`${payload[0].value} min`}</p>
+      <div className="averageSess-toolTip">
+        <p>{payload[0].value} min</p>
       </div>
     );
   } else {
@@ -24,101 +22,76 @@ const CustomTooltip = ({ active, payload }) => {
   }
 };
 
-export default function AverageSess(userId) {
-  userId = useParams().id;
-  const { data, loading, error } = useFetch(`${userId}/average-sessions.json`);
-  const dataFormate = new AverageSessions(data);
-  const averageSess = dataFormate.sessions;
-
-  function getAverage() {
-    if (!loading) {
-      averageSess.forEach((item, index) => {
-        item.day = new Date();
-
-        item.day.setDate(item.day.getDate() - index);
-
-        const options = {
-          year: "2-digit",
-          month: "2-digit",
-          day: "2-digit",
-          weekday: "narrow",
-        };
-
-        item.day = new Intl.DateTimeFormat("fr", options).format(item.day);
-
-        item.day = item.day[0];
-      });
-      return averageSess.reverse();
-    }
+function AverageSess(props) {
+  const week = ["D", "L", "M", "M", "J", "V", "S"];
+  const data = JSON.parse(JSON.stringify(props.data));
+  const dates = JSON.parse(JSON.stringify(props.dates));
+  // J'effectue une boucle for pour remplacer les n° des jours par leurs 1ère lettre
+  //afin d'être cohérent avec la maquette figma du projet
+  //+ la 1ère lettre est celle du jour actuel
+  for (let i = 0; i < data.length; i++) {
+    data[i].day = week[new Date(dates[i].day).getDay()];
   }
-  //GRAPH 2 : AVERAGE SESSIONS / WEEK
+
   return (
     <div className="average-sessions">
       <h3 className="averageSess-header">Durée moyenne des sessions</h3>
       <ResponsiveContainer height={165}>
-        {loading ? (
-          <p className="loading-msg">...</p>
-        ) : error ? (
-          <div className="error-msg">Oups ! Aucune donnée trouvée...</div>
-        ) : dataFormate ? (
-          <LineChart
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
+        <LineChart
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          data={data}
+        >
+          <defs>
+            <linearGradient id="colorUv" x1="0%" y1="0" x2="100%" y2="0">
+              <stop offset="0%" stopColor="#EE7572" />
+              <stop offset="100%" stopColor="#FFFFFF" />
+            </linearGradient>
+          </defs>
+          <XAxis
+            dataKey="day"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fontSize: 12, fill: "#F5BFBD" }}
+            dy={15}
+          />
+          <YAxis dataKey="sessionLength" hide={true} />
+          <Tooltip
+            content={CustomTooltip}
+            cursor={{
+              strokeLinecap: "square",
+              stroke: "#000000",
+              strokeOpacity: 0.1,
+              strokeWidth: 50,
+              height: 5000,
             }}
-            data={getAverage()}
-          >
-            <defs>
-              <linearGradient id="colorUv" x1="0%" y1="0" x2="100%" y2="0">
-                <stop offset="0%" stopColor="#EE7572" />
-                <stop offset="100%" stopColor="#FFFFFF" />
-              </linearGradient>
-            </defs>
-            <XAxis
-              dataKey="day"
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 18, fill: "#F5BFBD" }}
-              dy={10}
-            />
-            <YAxis dataKey="sessionLength" hide={true} />
-            <Tooltip
-              content={CustomTooltip}
-              cursor={{
-                strokeLinecap: "square",
-                stroke: "#000000",
-                strokeOpacity: 0.1,
-                strokeWidth: 50,
-                height: 5000,
-              }}
-            />
-            <Line
-              type="monotone"
-              dataKey="sessionLength"
-              stroke="url(#colorUv)"
-              activeDot={{
-                stroke: "#FFFFFF",
-                strokeOpacity: 0.1,
-                strokeWidth: 10,
-                r: 4,
-                fill: "#FFFFFF",
-              }}
-              dot={false}
-            />
-          </LineChart>
-        ) : null}
+          />
+          <Line
+            type="monotone"
+            dataKey="sessionLength"
+            stroke="url(#colorUv)"
+            activeDot={{
+              stroke: "#FFFFFF",
+              strokeOpacity: 0.1,
+              strokeWidth: 10,
+              r: 4,
+              fill: "#FFFFFF",
+            }}
+            dot={false}
+          />
+        </LineChart>
       </ResponsiveContainer>
     </div>
   );
 }
 
 AverageSess.propTypes = {
-  userId: propTypes.string,
+  data: propTypes.array.isRequired,
+  dates: propTypes.array.isRequired,
 };
 
-CustomTooltip.propTypes = {
-  active: propTypes.bool,
-  payload: propTypes.array,
-};
+export default AverageSess;

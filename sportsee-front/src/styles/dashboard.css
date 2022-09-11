@@ -1,10 +1,33 @@
+.dashboard-main {
+  flex-grow: 1;
+  width: 100%;
+  padding: 155px;
+  padding-top: 60px;
+  display: flex;
+  position: absolute;
+  top: 35px;
+  flex-direction: column;
+}
+
+/*WELCOMING USER*/
+.welcome-user {
+  margin-bottom: 10px;
+}
+
+.username {
+  color: #ff0000;
+  font-size: 40px;
+}
+
+.welcome-msg {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/*CHARTS*/
 .charts-main {
   width: 70%;
   padding-left: 155px;
   position: absolute;
   top: 255px;
-}
-
-.welcome-msg {
-  font-weight: 400;
 }

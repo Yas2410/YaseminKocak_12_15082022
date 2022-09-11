@@ -1,6 +1,6 @@
 .aside-section {
   width: 100px;
-  height: calc(100vh - 70px);
+  height: calc(135vh - 70px);
   margin: 0;
   padding-bottom: 85px;
   background-color: black;
@@ -27,14 +27,15 @@
 }
 
 .aside-txt {
+  width: 50%;
   text-align: center;
   line-height: 15px;
   color: white;
-  font-size: 10px;
+  font-size: 14px;
   transform: rotate(-90deg);
   display: flex;
   flex-wrap: nowrap;
   position: absolute;
-  bottom: 50px;
+  bottom: 150px;
   z-index: 1;
 }

@@ -18,7 +18,7 @@ Pour afficher les données à partir de l'API :
 - mock = false
 - Lancer le back en ouvrant le dossier (cd sportsee-back) puis "yarn-dev" (port 3000)
 */
-const mock = true;
+const mock = false;
 root.render(
   <React.StrictMode>
     <App mock={mock} />
