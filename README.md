@@ -1,6 +1,6 @@
 # sportsee
 
-![SportSee logo](../src/assets/logo.svg)
+![SportSee logo](/sportsee-front/src/assets/logo.svg)
 The Sportsee company is specialized in sports coaching.
 The company launched an app where users can have a regular follow-up of their sport sessions.
 
