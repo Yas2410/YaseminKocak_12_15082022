@@ -4,7 +4,7 @@ import "../styles/header.css";
 
 function Header() {
   return (
-    <div className="header-section">
+    <section className="header-section">
       <a className="header-logo" href="/">
         <img
           className="sportsee-logo"
@@ -12,19 +12,19 @@ function Header() {
           alt="Logo de la startup SportSee"
         />
       </a>
-      <NavLink className="header-link" to="/">
+      <NavLink className="nav-link" to="/">
         Accueil
       </NavLink>
-      <NavLink className="header-link" to="/profile">
+      <NavLink className="nav-link" to="/profile">
         Profil
       </NavLink>
-      <NavLink className="header-link" to="/settings">
+      <NavLink className="nav-link" to="/settings">
         Réglages
       </NavLink>
-      <NavLink className="header-link" to="/community">
+      <NavLink className="nav-link" to="/community">
         Communauté
       </NavLink>
-    </div>
+    </section>
   );
 }
 

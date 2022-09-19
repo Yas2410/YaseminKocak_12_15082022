@@ -1,7 +1,5 @@
-import React from "react";
-class Informations extends React.Component {
+class Informations {
   constructor(data) {
-    super();
     this.id = data.id;
     this.userInfos = data.userInfos;
     this.todayScore = data.todayScore;

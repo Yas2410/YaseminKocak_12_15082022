@@ -1,41 +1,37 @@
+/*ASIDE GLOBAL*/
 .aside-section {
-  width: 100px;
-  height: calc(135vh - 70px);
-  margin: 0;
-  padding-bottom: 85px;
+  position: fixed;
+  width: 120px;
+  height: 100vh;
   background-color: black;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.aside-icon {
-  width: 90%;
-}
-
+/*SPORT ICONS*/
 .aside-btn {
-  width: 55px;
-  height: 55px;
-  background-color: white;
-  border-radius: 10px;
-  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
+  width: 65px;
+  height: 65px;
+  background: white;
+  border-radius: 5px;
 }
 
+.aside-btn-first {
+  margin-top: 20px;
+}
+
+/*COPYRIGHT*/
 .aside-txt {
-  width: 50%;
-  text-align: center;
-  line-height: 15px;
-  color: white;
-  font-size: 14px;
   transform: rotate(-90deg);
-  display: flex;
-  flex-wrap: nowrap;
-  position: absolute;
-  bottom: 150px;
-  z-index: 1;
+  text-align: center;
+  color: white;
+  font-size: 10px;
+  margin-top: 60px;
 }

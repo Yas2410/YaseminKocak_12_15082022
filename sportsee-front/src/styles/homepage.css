@@ -1,3 +1,4 @@
+/*HOMEPAGE W- LINKS TO ACCESS USER PROFIL*/
 .homepage {
   justify-content: center;
   align-items: center;
@@ -8,32 +9,37 @@
   transform: translate(-50%, -50%);
 }
 
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 0;
+  background: black;
+}
+.banner-logo {
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .user-profile {
-  padding: 100px;
+  padding: 55px;
   font-size: 18px;
-  font-weight: 700;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.banner {
-  width: 100%;
-  background-color: black;
-  height: 120px;
-}
-
-.banner-logo {
-  padding-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sportsee-banner {
-  width: 20%;
-}
-
 .homepage-logo {
-  width: 150%;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 15px;
+}
+
+.homepage-userName {
+  text-align: center;
 }

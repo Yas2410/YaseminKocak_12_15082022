@@ -1,9 +1,9 @@
-import React from "react";
+import "../styles/loader.css";
 
 function Loader() {
   return (
-    <div className="l">
-      <div className="l"></div>
+    <div className="loader-center">
+      <div className="loading-page"></div>
     </div>
   );
 }

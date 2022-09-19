@@ -1,0 +1,43 @@
+.dailyScore-chart {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+}
+
+.pieChart-style {
+  position: absolute;
+  bottom: 35px;
+}
+
+.score-chart {
+  width: 100%;
+}
+
+.dailyScore-chart-title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.dailyScore-chart-result {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dailyScore-chart-lgd {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #74798c;
+}

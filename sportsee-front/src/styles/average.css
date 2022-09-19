@@ -1,14 +1,25 @@
-.average-sessions {
-  position: relative;
-  width: 50%;
-  margin-top: 35px;
+/*AVERAGE SESSIONS CHART*/
+.averageSessions-chart {
+  width: 250px;
+  height: 250px;
   background-color: #ff0000;
+  color: white;
   border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 25px;
+  padding: 10px;
 }
 
-.averageSess-header {
-  font-size: 16px;
-  color: white;
+.averageSessions-chart-title {
+  color: rgba(250, 250, 250, 0.5);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  width: 60%;
+  padding: 5px;
+  margin-left: 35px;
+}
+
+.customtooltip-min {
+  color: black;
+  background-color: white !important;
+  padding: 10px;
 }

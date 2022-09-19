@@ -1,21 +1,26 @@
+/*DASHBOARD GLOBAL*/
 .dashboard-main {
   flex-grow: 1;
   width: 100%;
-  padding: 155px;
-  padding-top: 60px;
+  padding-left: 155px;
+  padding-right: 35px;
   display: flex;
-  position: absolute;
-  top: 35px;
   flex-direction: column;
 }
 
 /*WELCOMING USER*/
+.welcome-section {
+  padding-top: 115px;
+  margin-bottom: 50px;
+}
+
 .welcome-user {
+  font-size: 40px;
   margin-bottom: 10px;
 }
 
 .username {
-  color: #ff0000;
+  color: #ff0101;
   font-size: 40px;
 }
 
@@ -24,10 +29,18 @@
   font-weight: 400;
 }
 
-/*CHARTS*/
-.charts-main {
-  width: 70%;
-  padding-left: 155px;
-  position: absolute;
-  top: 255px;
+/*CHARTS ALL*/
+.allDatas-section {
+  display: flex;
+  justify-content: space-between;
+}
+.charts-section {
+  width: 75%;
+  margin: 0;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }

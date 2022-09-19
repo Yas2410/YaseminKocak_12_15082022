@@ -3,10 +3,13 @@ import { useFetch } from "./useFetch";
 
 export function useGetData(mock, id) {
   //Si j'appelle mes données mockées à partir de ma fausse API :
-  //ATTENTION : Bien suivre les directives indiquées dans le fichier index.jsx (booléen)
+  //ATTENTION : Bien suivre les directives indiquées dans le fichier index.jsx
+  // Mock (booléen) + commande json serveur sur le terminal
   const mocked_data = "http://localhost:1234/";
+
   //Si j'appelle l'API :
   const api_data = "http://localhost:3000/user/";
+
   //Afin de créer un chemin pour chaque catégorie :
   let path, pathSyntax, userPath, activityPath, averagePath, perfPath;
 

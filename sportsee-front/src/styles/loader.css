@@ -1,0 +1,28 @@
+/*Position du loader sur ma page web*/
+.loader-center {
+  width: 100%;
+  position: fixed;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+}
+
+/*CERCLE LOADER*/
+.loading-page {
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #ff0000;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+/*AJOUT D'UN KEYFRAME pour
+   l'animation du cercle*/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

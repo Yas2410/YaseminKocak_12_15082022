@@ -13,9 +13,7 @@ import "../styles/average.css";
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload) {
     return (
-      <div className="averageSess-toolTip">
-        <p>{payload[0].value} min</p>
-      </div>
+      <span className="customtooltip-min">{`${payload[0].value} min`}</span>
     );
   } else {
     return null;
@@ -28,36 +26,32 @@ function AverageSess(props) {
   const dates = JSON.parse(JSON.stringify(props.dates));
   // J'effectue une boucle for pour remplacer les n° des jours par leurs 1ère lettre
   //afin d'être cohérent avec la maquette figma du projet
-  //+ la 1ère lettre est celle du jour actuel
   for (let i = 0; i < data.length; i++) {
     data[i].day = week[new Date(dates[i].day).getDay()];
   }
 
   return (
-    <div className="average-sessions">
-      <h3 className="averageSess-header">Durée moyenne des sessions</h3>
-      <ResponsiveContainer height={165}>
+    <div>
+      <h3 className="averageSessions-chart-title">
+        Durée moyenne des sessions
+      </h3>
+      <ResponsiveContainer height={200}>
         <LineChart
           margin={{
-            top: 5,
-            right: 30,
+            top: 10,
+            right: 20,
             left: 20,
-            bottom: 5,
+            bottom: 20,
           }}
+          //Je récupère mes données
           data={data}
         >
-          <defs>
-            <linearGradient id="colorUv" x1="0%" y1="0" x2="100%" y2="0">
-              <stop offset="0%" stopColor="#EE7572" />
-              <stop offset="100%" stopColor="#FFFFFF" />
-            </linearGradient>
-          </defs>
           <XAxis
             dataKey="day"
             axisLine={false}
             tickLine={false}
-            tick={{ fontSize: 12, fill: "#F5BFBD" }}
-            dy={15}
+            tick={{ fontSize: 14, fill: "#F5BFBD" }}
+            dy={10}
           />
           <YAxis dataKey="sessionLength" hide={true} />
           <Tooltip
@@ -67,21 +61,19 @@ function AverageSess(props) {
               stroke: "#000000",
               strokeOpacity: 0.1,
               strokeWidth: 50,
-              height: 5000,
             }}
           />
           <Line
-            type="monotone"
             dataKey="sessionLength"
-            stroke="url(#colorUv)"
-            activeDot={{
-              stroke: "#FFFFFF",
-              strokeOpacity: 0.1,
-              strokeWidth: 10,
-              r: 4,
-              fill: "#FFFFFF",
-            }}
+            type="monotone"
+            stroke="rgba(255, 255, 255, 0.9)"
+            strokeWidth={1}
             dot={false}
+            activeDot={{
+              stroke: "rgba(255,255,255, 0.6)",
+              strokeWidth: 5,
+              r: 5,
+            }}
           />
         </LineChart>
       </ResponsiveContainer>

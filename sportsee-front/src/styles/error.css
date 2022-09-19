@@ -1,0 +1,33 @@
+/*ERROR PAGE*/
+.error-section {
+  width: 100%;
+  padding-left: 155px;
+  padding-right: 35px;
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ff0000;
+  font-size: 40px;
+}
+
+.error-txt {
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 75px;
+}
+
+.home-link {
+  color: #ff0000;
+  font-size: 18px;
+  text-decoration: underline;
+}

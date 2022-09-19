@@ -15,8 +15,11 @@ function App(props) {
             path="/"
             element={<Homepage mock={props.mock} />}
           ></Route>
-          <Route path="/:id" element={<Dashboard mock={props.mock} />}></Route>
-          <Route path="*" element={<Error />}></Route>
+          <Route
+            path="/user/:id"
+            element={<Dashboard mock={props.mock} />}
+          ></Route>
+          <Route path="*" element={<Error />} />
         </Routes>
       </Router>
     </div>

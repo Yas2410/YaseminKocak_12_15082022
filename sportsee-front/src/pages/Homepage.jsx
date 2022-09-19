@@ -6,55 +6,67 @@ import sportsee from "../assets/sportsee-txt.svg";
 import "../styles/homepage.css";
 
 function Homepage(props) {
+  //Si les données appelées sont celles de l'API,
+  //Je récupère alors les datas correspondantes
   if (!props.mock) {
     return (
-      <section className="banner">
-        <div className="banner-logo">
-          <img className="sportsee-banner" src={sportsee} alt="Sportsee logo" />
-        </div>
+      <section>
+        <header className="banner">
+          <img className="banner-logo" src={sportsee} alt="Sportsee logo" />
+        </header>
         <div className="homepage">
-          <Link className="user-profile" to="/12">
-            <img
-              className="homepage-logo"
-              src={homepageLogo}
-              alt="Sportsee logo"
-            />
-            Karl
-          </Link>
-          <Link className="user-profile" to="/18">
-            <img
-              className="homepage-logo"
-              src={homepageLogo}
-              alt="Sportsee logo"
-            />
-            Cécilia
-          </Link>
+          <div className="user-profile">
+            <Link to="/user/12">
+              <img
+                className="homepage-logo"
+                src={homepageLogo}
+                alt="Sportsee logo"
+              />
+              <h3 className="homepage-userName">Karl</h3>
+            </Link>
+          </div>
+          <div className="user-profile">
+            <Link to="/user/18">
+              <img
+                className="homepage-logo"
+                src={homepageLogo}
+                alt="Sportsee logo"
+              />
+              <h3 className="homepage-userName">Cécilia</h3>
+            </Link>
+          </div>
         </div>
       </section>
     );
   } else {
     return (
-      <section className="banner">
-        <div className="banner-logo">
-          <img className="sportsee-banner" src={sportsee} alt="Sportsee logo" />
-        </div>
+      // A l'inverse, si je ne fait pas appel à l'API,
+      //Je retourne les données mockées (fichier mocked_data.json)
+      <section>
+        <header className="banner">
+          <img className="banner-logo" src={sportsee} alt="Sportsee logo" />
+        </header>
         <div className="homepage">
-          <Link className="user-profile" to="/1">
-            <img
-              className="homepage-logo"
-              src={homepageLogo}
-              alt="Sportsee logo"
-            />
-            Mock_1
-          </Link>
-          <Link className="user-profile" to="/2">
-            <img
-              className="homepage-logo"
-              src={homepageLogo}
-              alt="Sportsee logo"
-            />
-            Mock_2
-          </Link>
+          <div className="user-profile">
+            <Link to="/user/1">
+              <img
+                className="homepage-logo"
+                src={homepageLogo}
+                alt="Sportsee logo"
+              />
+              <h3 className="homepage-userName">Mock-1</h3>
+            </Link>
+          </div>
+          <div className="user-profile">
+            <Link to="/user/2">
+              <img
+                className="homepage-logo"
+                src={homepageLogo}
+                alt="Sportsee logo"
+              />
+              <h3 className="homepage-userName">Mock-2</h3>
+            </Link>
+          </div>
         </div>
       </section>
     );
