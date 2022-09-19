@@ -1,6 +1,6 @@
 # sportsee
 
-![SportSee logo](./src/assets/logo.svg)
+![SportSee logo](../src/assets/logo.svg)
 The Sportsee company is specialized in sports coaching.
 The company launched an app where users can have a regular follow-up of their sport sessions.
 
@@ -27,13 +27,13 @@ The company launched an app where users can have a regular follow-up of their sp
 
 ## Installation
 
-1. Clone the repository
+Clone the repository
 
 ```sh
 git clone https://github.com/Yas2410/YaseminKocak_12_15082022.git
 ```
 
-2. BACK-END Launching
+### BACK-END Launching
 
 - Move to the back-end folder :
 
@@ -55,7 +55,7 @@ yarn dev
 
 _The API is running when you get the "Magic happens on port 3000" message_
 
-2. FRONT-END Launching
+### FRONT-END Launching
 
 - Move to the front-end folder :
 
