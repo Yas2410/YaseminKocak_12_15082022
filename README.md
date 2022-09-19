@@ -39,45 +39,17 @@ git clone https://github.com/Yas2410/YaseminKocak_12_15082022.git
 
 ### BACK-END Launching
 
-Move to the back-end folder :
-
-```sh
-cd sportsee-back
-```
-
-Install the dependencies :
-
-```sh
-yarn
-```
-
-Run the API
-
-```sh
-yarn dev
-```
+Move to the back-end folder : `cd sportsee-back`  
+Install the dependencies : `yarn`  
+Run the API : `yarn dev`
 
 _The API is running when you get the "Magic happens on port 3000" message_
 
 ### FRONT-END Launching
 
-Move to the front-end folder :
-
-```sh
-cd sportsee-front
-```
-
-Install the dependencies :
-
-```sh
-npm install
-```
-
-Launch the project
-
-```sh
-npm start
-```
+Move to the front-end folder : `cd sportsee-front`  
+Install the dependencies : `npm install`  
+Launch the project : `npm start`
 
 _As port 3000 is already running, enter "Y" to run the project on another port_
 
@@ -86,25 +58,9 @@ _As port 3000 is already running, enter "Y" to run the project on another port_
 ## API & MOCKED DATA
 
 API is running by default.
-
 If you want to launch the project with mocked data, **follow the above steps** :
 
-Go back to the front-end folder :
-
-```sh
-cd sportsee-front
-```
-
-Install json server
-
-```sh
-npm install -g json-server
-```
-
-Launch json server
-
-```sh
-json-server --watch ./src/mock/mocked_data.json --port 1234
-```
-
+In the front-end folder : `cd sportsee-front`  
+Install json server : `npm install -g json-server`  
+Launch json server : `json-server --watch ./src/mock/mocked_data.json --port 1234`
 In `src/index.js`, change mock variable to `true`.
