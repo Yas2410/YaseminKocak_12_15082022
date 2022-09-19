@@ -44,3 +44,29 @@
   justify-content: space-between;
   align-items: center;
 }
+
+/*MEDIA QUERIES TABLET 1024 * 780*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .welcome-section {
+    text-align: center;
+  }
+
+  .allDatas-section {
+    display: block;
+  }
+
+  .charts-section {
+    width: 100%;
+  }
+
+  .nutritionalValues {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+
+  .values {
+    padding: 15px;
+    margin: 10px;
+  }
+}

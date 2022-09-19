@@ -43,3 +43,14 @@
 .homepage-userName {
   text-align: center;
 }
+
+/*MEDIA QUERIES TABLET 1024 * 780*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .homepage {
+    width: 70%;
+  }
+
+  .homepage-userName {
+    font-size: 30px;
+  }
+}
