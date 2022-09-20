@@ -11,7 +11,7 @@ The company launched an app where users can have a regular follow-up of their sp
 - Charts & Graphs Integration
 - JSDoc
 
-[SEE the KANBAN](https://676974353034.notion.site/Tableau-de-bord-SportSee-922ee66152c74a9ab9d74b9be1e6e13f) || [SEE Design on Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR)
+[See KANBAN](https://676974353034.notion.site/Tableau-de-bord-SportSee-922ee66152c74a9ab9d74b9be1e6e13f) || [See Design on FIGMA](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR)
 
 ---
 

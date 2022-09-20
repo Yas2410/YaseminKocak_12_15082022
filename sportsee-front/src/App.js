@@ -4,7 +4,6 @@ import propTypes from "prop-types";
 import Error from "./pages/Error";
 import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
-
 function App(props) {
   return (
     <div className="App">
