@@ -59,12 +59,12 @@ _As port 3000 is already running, enter "Y" to run the project on another port_
 
 API is running by default.
 If you want to launch the project with mocked data,  
-**follow the above steps** :
+**follow the steps below** :
 
 - In the front-end folder : `cd sportsee-front`
 - Install json server : `npm install -g json-server`
 - Launch json server : `json-server --watch ./src/mock/mocked_data.json --port 1234`
-- In `src/index.js`, change mock variable to `true`
+- In `sportsee-front/src/index.js`, change mock variable to `true`
 
 ---
 
