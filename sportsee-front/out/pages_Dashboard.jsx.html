@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/Dashboard.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/Dashboard.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import { useGetData } from "../hook/useGetData";
+import propTypes from "prop-types";
+import { useParams } from "react-router-dom";
+import Informations from "../class/informationsClass";
+import Activity from "../class/activityClass";
+import AverageSessions from "../class/averageSessionsClass";
+import Performance from "../class/performanceClass";
+import Header from "../components/Header";
+import Aside from "../components/Aside";
+import Loader from "../components/Loader";
+import DailyActivity from "../components/DailyActivity";
+import Average from "../components/Average";
+import Perf from "../components/Perf";
+import DailyScore from "../components/DailyScore";
+import NutritionalValues from "../components/NutritionalValues";
+import Error from "../pages/Error";
+import "../styles/dashboard.css";
+import "../styles/values.css";
+import caloriesIcon from "../assets/calories-icon.svg";
+import proteinsIcon from "../assets/proteins-icon.svg";
+import carbsIcon from "../assets/carbs-icon.svg";
+import fatIcon from "../assets/fat-icon.svg";
+
+/**
+ * @description React component to create dashboard page with all user datas (all charts components)
+ * @param { {mock: Boolean} } props mock: Mocked data // API data
+ * @property {function} Dashboard
+ * @returns { React.ReactElement } Dashboard page
+ */
+function Dashboard(props) {
+  const { id } = useParams("/");
+  const {
+    userData,
+    userLoading,
+    userError,
+    activityData,
+    activityLoading,
+    activityError,
+    averageData,
+    averageLoading,
+    averageError,
+    perfData,
+    perfLoading,
+    perfError,
+  } = useGetData(props.mock, id);
+
+  //Classes / Formatage des données
+  const userDataFormate = new Informations(userData);
+  const activityDataFormate = new Activity(activityData);
+  const averageDataFormate = new AverageSessions(averageData);
+  const perfDataFormate = new Performance(perfData);
+  //Si erreur sur l'ensemble de mes données : Afficher la page d'Erreur
+  if (userError || activityError || averageError || perfError) {
+    return &lt;Error />;
+  } else {
+    //Pendant le chargement de mes données : Afficher le loader
+    if (userLoading || activityLoading || averageLoading || perfLoading) {
+      return &lt;Loader />;
+    } else {
+      //Sinon, retourner l'ensemble de mes données
+      return (
+        &lt;main>
+          &lt;header>
+            &lt;Header />
+            &lt;Aside />
+          &lt;/header>
+          &lt;section className="dashboard-main">
+            &lt;div className="welcome-section">
+              &lt;h1 className="welcome-user">
+                Bonjour{" "}
+                &lt;span className="username">
+                  {userDataFormate.userInfos.firstName}
+                &lt;/span>
+              &lt;/h1>
+              &lt;h2 className="welcome-msg">
+                Félicitations ! Vous avez explosé vos objectifs hier 👏
+              &lt;/h2>
+            &lt;/div>
+            &lt;section className="allDatas-section">
+              &lt;div className="charts-section">
+                &lt;div className="dailyActivity-chart">
+                  &lt;h3 className="dailyActivity-chart-title">
+                    Activité quotidienne
+                  &lt;/h3>
+                  &lt;DailyActivity data={activityDataFormate.sessions} />
+                &lt;/div>
+                &lt;div className="averageSessions-chart">
+                  &lt;Average
+                    data={averageDataFormate.sessions}
+                    dates={activityDataFormate.sessions}
+                  />
+                &lt;/div>
+                &lt;div className="perf-chart">
+                  &lt;Perf
+                    data={perfDataFormate.data}
+                    category={perfDataFormate.kind}
+                  />
+                &lt;/div>
+                &lt;div className="dailyScore-chart">
+                  &lt;DailyScore data={userDataFormate} />
+                &lt;/div>
+              &lt;/div>
+              &lt;div className="nutritionalValues-section">
+                &lt;div className="nutritionalValues">
+                  &lt;NutritionalValues
+                    img={caloriesIcon}
+                    name="Calories"
+                    quantity={userDataFormate.keyData.calorieCount + "kCal"}
+                    type="calories"
+                  />
+
+                  &lt;NutritionalValues
+                    img={proteinsIcon}
+                    name="Protéines"
+                    quantity={userDataFormate.keyData.proteinCount + "g"}
+                    type="proteins"
+                  />
+
+                  &lt;NutritionalValues
+                    img={carbsIcon}
+                    name="Glucides"
+                    quantity={userDataFormate.keyData.carbohydrateCount + "g"}
+                    type="carbohydrates"
+                  />
+
+                  &lt;NutritionalValues
+                    img={fatIcon}
+                    name="Lipides"
+                    quantity={userDataFormate.keyData.lipidCount + "g"}
+                    type="lipids"
+                  />
+                &lt;/div>
+              &lt;/div>
+            &lt;/section>
+          &lt;/section>
+        &lt;/main>
+      );
+    }
+  }
+}
+
+Dashboard.propTypes = {
+  mock: propTypes.bool.isRequired,
+};
+
+export default Dashboard;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Activity.html">Activity</a></li><li><a href="AverageSessions.html">AverageSessions</a></li><li><a href="Informations.html">Informations</a></li><li><a href="Performance.html">Performance</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Aside">Aside</a></li><li><a href="global.html#AverageSess">AverageSess</a></li><li><a href="global.html#DailyActivity">DailyActivity</a></li><li><a href="global.html#DailyScore">DailyScore</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Homepage">Homepage</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#NutritionalValues">NutritionalValues</a></li><li><a href="global.html#Perf">Perf</a></li><li><a href="global.html#useFetch">useFetch</a></li><li><a href="global.html#useGetData">useGetData</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Tue Sep 20 2022 12:12:39 GMT+0200 (heure d’été d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -64,4 +64,14 @@ If you want to launch the project with mocked data,
 - In the front-end folder : `cd sportsee-front`
 - Install json server : `npm install -g json-server`
 - Launch json server : `json-server --watch ./src/mock/mocked_data.json --port 1234`
-- In `src/index.js`, change mock variable to `true`.
+- In `src/index.js`, change mock variable to `true`
+
+---
+
+## JSDoc
+
+To see JSDoc file details, open the `index.html` file which is in the below path and run `live server` :
+
+```sh
+sportsee-front/out/index.html
+```
