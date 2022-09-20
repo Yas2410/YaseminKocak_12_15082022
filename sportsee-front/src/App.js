@@ -4,6 +4,13 @@ import propTypes from "prop-types";
 import Error from "./pages/Error";
 import Dashboard from "./pages/Dashboard";
 import Homepage from "./pages/Homepage";
+
+/**
+ * @description React component for App using React Router
+ * @property {function} App
+ * @param { {mock: Boolean} } props mock: Mocked data // API data
+ * @returns { React.ReactElement } App
+ */
 function App(props) {
   return (
     <div className="App">

@@ -9,6 +9,12 @@ import {
 } from "recharts";
 import "../styles/perf.css";
 
+/**
+ * @description React component to create a radar chart using Recharts
+ * @property {function} Perf
+ * @param { {data: Array, axisTitles: Array} } props
+ * @returns { React.ReactElement } Perf component
+ */
 function Perf(props) {
   const data = JSON.parse(JSON.stringify(props.data));
 

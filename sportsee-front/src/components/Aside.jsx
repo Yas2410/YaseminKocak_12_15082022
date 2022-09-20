@@ -4,6 +4,12 @@ import bicycle from "../assets/bicycle-icon.svg";
 import workout from "../assets/workout-icon.svg";
 import "../styles/aside.css";
 
+/**
+ * @description React component for Aside navigation
+ * @property {function} Aside
+ * @returns {React.ReactElement} Aside component
+ */
+
 function Aside() {
   //méthode getFullYear() : renvoie l'année de la date
   //renseignée d'après l'heure locale

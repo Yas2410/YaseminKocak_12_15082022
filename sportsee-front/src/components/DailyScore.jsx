@@ -3,6 +3,12 @@ import propTypes from "prop-types";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import "../styles/dailyScore.css";
 
+/**
+ * @description React component to create a pie chart with user's daily score using Recharts
+ * @property {function} DailyScore
+ * @param { {data: Array} } props data: array containing user's daily score
+ * @returns {React.ReactElement} DailyScore component
+ */
 function DailyScore(props) {
   const data = JSON.parse(JSON.stringify(props.data));
 

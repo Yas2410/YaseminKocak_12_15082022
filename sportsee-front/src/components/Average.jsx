@@ -20,6 +20,12 @@ const CustomTooltip = ({ active, payload }) => {
   }
 };
 
+/**
+ * @description React component to create a line chart using Recharts
+ * @property {function} AverageSess
+ * @param { {data: Array, dates: Array} } props data: session details, dates: session dates
+ * @returns { React.ReactElement } AverageSess component
+ */
 function AverageSess(props) {
   const week = ["D", "L", "M", "M", "J", "V", "S"];
   const data = JSON.parse(JSON.stringify(props.data));

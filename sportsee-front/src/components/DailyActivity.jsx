@@ -25,6 +25,12 @@ const CustomTooltip = ({ active, payload }) => {
   }
 };
 
+/**
+ * @description React component to create a bar chart using Recharts
+ * @property {function} DailyActivity
+ * @param { {data: Array} } props data: sessions
+ * @returns { React.ReactElement } DailyActivity component
+ */
 function DailyActivity(props) {
   const data = JSON.parse(JSON.stringify(props.data));
   // J'effectue une boucle for pour remplacer les dates par des chiffres

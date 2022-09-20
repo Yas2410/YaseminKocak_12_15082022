@@ -1,6 +1,12 @@
 import propTypes from "prop-types";
 import "../styles/values.css";
 
+/**
+ * @description React component to create nutritional values elements such as calories, proteins, carbs and fat
+ * @property {function} NutritionalValues
+ * @param { {img: SVGElement, name: string, quantity: string} } props
+ * @returns {React.ReactElement} NutritionalValues component
+ */
 function NutritionalValues(props) {
   return (
     <div className="values">

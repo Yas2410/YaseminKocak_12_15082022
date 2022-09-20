@@ -5,6 +5,12 @@ import homepageLogo from "../assets/sportsee-icon.png";
 import sportsee from "../assets/sportsee-txt.svg";
 import "../styles/homepage.css";
 
+/**
+ * @description React component to render homepage with user's profiles
+ * @param { {mock: Boolean} } props mock: Mocked data // API data
+ * @property {function} Homepage
+ * @returns { React.ReactElement } Homepage page
+ */
 function Homepage(props) {
   //Si les données appelées sont celles de l'API,
   //Je récupère alors les datas correspondantes

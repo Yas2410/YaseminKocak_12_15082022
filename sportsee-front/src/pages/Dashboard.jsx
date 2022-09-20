@@ -22,6 +22,12 @@ import proteinsIcon from "../assets/proteins-icon.svg";
 import carbsIcon from "../assets/carbs-icon.svg";
 import fatIcon from "../assets/fat-icon.svg";
 
+/**
+ * @description React component to create dashboard page with all user datas (all charts components)
+ * @param { {mock: Boolean} } props mock: Mocked data // API data
+ * @property {function} Dashboard
+ * @returns { React.ReactElement } Dashboard page
+ */
 function Dashboard(props) {
   const { id } = useParams("/");
   const {

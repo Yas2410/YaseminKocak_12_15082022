@@ -1,6 +1,24 @@
 //J'importe ma méthode USEFETCH
 import { useFetch } from "./useFetch";
 
+/**
+ * @description React hook to get data from mocked data or API
+ * @property {function} useGetData
+ * @param { Boolean } mock - Mocked data (true) or API data (false)
+ * @param { Number } id - User's ID
+ * @returns { {userData: Array,
+ *  userLoading: Boolean,
+ * userError: Boolean,
+ *  activityData: Array,
+ * activityLoading: Boolean,
+ * activityError: Boolean,
+ * averageData: Array,
+ * averageLoading: Boolean,
+ * averageError: Boolean,
+ * perfData: Array,
+ * perfLoading: Boolean,
+ * perfError: Boolean} }
+ */
 export function useGetData(mock, id) {
   //Si j'appelle mes données mockées à partir de ma fausse API :
   //ATTENTION : Bien suivre les directives indiquées dans le fichier index.jsx

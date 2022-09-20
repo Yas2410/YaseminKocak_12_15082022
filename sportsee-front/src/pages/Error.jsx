@@ -3,6 +3,12 @@ import Header from "../components/Header";
 import Aside from "../components/Aside";
 import "../styles/error.css";
 
+/**
+ * @description React component to render Error page when url is incorrect
+ * @property {function} Error
+ * @returns { React.ReactElement } Error page
+ */
+
 function Error() {
   return (
     <section>
