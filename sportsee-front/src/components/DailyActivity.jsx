@@ -56,7 +56,7 @@ function DailyActivity(props) {
         <XAxis
           dataKey="day"
           stroke="#9B9EAC"
-          tickLine={false}
+          tickLine={true}
           dy={10}
           style={{ fontSize: "14px" }}
         />
